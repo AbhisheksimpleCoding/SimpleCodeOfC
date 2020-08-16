@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body background="download.jpg">
+<div><center><marquee scrollamount="20"><img src="smiles_happy_cheerful_121653_1920x1080.jpg" style="height:150px"></marquee></center></div>
+<center><div style="background-color:#E0D4D4;height:100%;width:400px">
+<h1>CODE FOR MERGE SORT</h1><br><br>
+#include< stdio.h><br><br>  
+void mergeSort(int[],int,int); <br><br> 
+void merge(int[],int,int,int);  <br><br>
+void main ()  <br><br>
+{  <br><br>
+    int a[10]= {10, 9, 7, 101, 23, 44, 12, 78, 34, 23}; <br><br> 
+    int i;  <br><br>
+    mergeSort(a,0,9); <br><br>  
+    printf("printing the sorted elements"); <br><br> 
+    for(i=0;i < 10;i++)  <br><br>
+    {  <br><br>
+        printf("\n%d\n",a[i]); <br><br>  
+    }  <br><br>
+      
+}  <br><br>
+void mergeSort(int a[], int beg, int end)  <br><br>
+{  <br><br>
+    int mid;  <br><br> 
+    if(beg < end)  <br><br>
+    {  <br><br>
+        mid = (beg+end)/2;  <br><br>
+        mergeSort(a,beg,mid);  <br><br>
+        mergeSort(a,mid+1,end);  <br><br>
+        merge(a,beg,mid,end);  <br><br>
+    } <br><br>  
+}  <br><br>
+void merge(int a[], int beg, int mid, int end) <br><br>  
+{  <br><br>
+    int i=beg,j=mid+1,k,index = beg; <br><br> 
+    int temp[10];  <br><br>
+    while(i <=mid && j <=end) <br><br>  
+    {  <br><br>
+        if(a[i] <  a[j]) <br><br>  
+        {  <br><br>
+            temp[index] = a[i]; <br><br> 
+            i = i+1;  <br><br>
+        }  <br><br>
+        else   <br><br>
+        {  <br><br>
+            temp[index] = a[j];  <br><br> 
+            j = j+1;   <br><br>
+        }  <br><br>
+        index++;  <br><br>
+    }  <br><br>
+    if(i>mid)  <br><br>
+    {  <br><br>
+        while(j<=end) <br><br>  
+        {  <br><br>
+            temp[index] = a[j];  <br><br>
+            index++;  <br><br>
+            j++;  <br><br>
+        }  <br><br>
+    }  <br><br>
+    else   <br><br>
+    {  <br><br>
+        while(i<=mid)  <br><br> 
+        {  <br><br>
+            temp[index] = a[i];<br><br>  
+            index++;  <br><br>
+            i++;  <br><br>
+        }  <br><br>
+    }  <br><br>
+    k = beg;  <br><br>
+    while(k< index)  <br><br>
+    {  <br><br>
+        a[k]=temp[k]; <br><br>  
+        k++;  <br><br>
+    }  <br><br>
+}  <br><br>
+<a href="index.html"><button>BACK</button></a>
+</div></center>
+</body>
+</html>
+ 
